@@ -9,9 +9,9 @@ const userRouter = require("./routes/user-route");
 const app = express();
 
 // Middlewares
-app.use(cors()); // Allow cross domain
-app.use(morgan("dev")); // show log terminal
-app.use(express.json()); // For read json
+app.use(cors()); // Allow Cross-Origin Resource Sharing
+app.use(morgan("dev")); // show log terminal: Log HTTP requests
+app.use(express.json()); // Parse JSON bodies = read req.body
 
 // Routing
 app.use("/api", authRouter);
@@ -21,5 +21,5 @@ app.use("/api", userRouter);
 app.use(handleErrors);
 
 // Start server
-const PORT = 8000
+const PORT = 8899
 app.listen(PORT, ()=> console.log(`Server is running on port ${PORT}`));
